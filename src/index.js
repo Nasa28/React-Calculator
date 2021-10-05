@@ -1,15 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 // eslint-disable-next-line
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 // eslint-disable-next-line
-import Big from 'big.js';
-import App from './component/App';
+import Big from "big.js";
+import App from "./component/App";
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById("root")
 );
