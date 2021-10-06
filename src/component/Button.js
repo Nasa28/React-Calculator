@@ -5,7 +5,7 @@ const Button = (props) => {
   const { button } = props;
   return (
     <div>
-      <h1>{button}</h1>
+      <button>{button}</button>
     </div>
   );
 };

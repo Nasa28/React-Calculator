@@ -1,35 +1,36 @@
 import React from 'react';
+import Button from './Button';
 
 const ButtonPanel = () => (
   <>
     <div>
-      <button type="button">AC</button>
-      <button type="button">+/-</button>
-      <button type="button">%</button>
-      <button type="button">÷</button>
+      <Button button="AC" />
+      <Button button="+/-" />
+      <Button button="%" />
+      <Button button="÷" />
     </div>
     <div>
-      <button type="button">7</button>
-      <button type="button">8</button>
-      <button type="button">9</button>
-      <button type="button">X</button>
+      <Button button="7" />
+      <Button button="8" />
+      <Button button="9" />
+      <Button button="X" />
     </div>
     <div>
-      <button type="button">4</button>
-      <button type="button">5</button>
-      <button type="button">6</button>
-      <button type="button">-</button>
+      <Button button="4" />
+      <Button button="5" />
+      <Button button="6" />
+      <Button button="-" />
     </div>
     <div>
-      <button type="button">1</button>
-      <button type="button">2</button>
-      <button type="button">3</button>
-      <button type="button">+</button>
+      <Button button="1" />
+      <Button button="2" />
+      <Button button="3" />
+      <Button button="+" />
     </div>
     <div>
-      <button type="button">0</button>
-      <button type="button">.</button>
-      <button type="button">=</button>
+      <Button button="0" />
+      <Button button="." />
+      <Button button="=" />
     </div>
   </>
 );
