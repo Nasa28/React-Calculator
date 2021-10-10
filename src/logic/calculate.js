@@ -6,6 +6,19 @@ const calculate = (data, buttonName) => {
   let operators = ['÷', 'X', '+', '-'];
   let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+  if (buttonName === 'AC') {
+    total = null;
+    next = null;
+    operation = null;
+  }
+
+  if (buttonName === '+/-') {
+    if (!next) {
+      total *= -1;
+    } else {
+      next *= -1;
+    }
+  }
   /*
  The pseudo-codes goes in here.
  1. if the buttonName is AC, total = null, operation = null, next = null
@@ -68,6 +81,7 @@ if (operator.includes(buttonname))
     return data;
   }
  */
+  return data;
 };
 
 export default calculate;
