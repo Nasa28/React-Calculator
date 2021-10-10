@@ -18,7 +18,7 @@ const operate = (numberOne, numberTwo, operation) => {
       result = num1.div(num1);
     }
     if (operation === '%') {
-      result = one.div(Big('100'));
+      result = num1.div(Big('100'));
     }
   }
   return result.toPrecision();
