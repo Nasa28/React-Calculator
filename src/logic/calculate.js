@@ -3,14 +3,8 @@ import operate from './operate';
 const calculate = (data, buttonName) => {
   const { total, next, operation } = data;
 
-  let operator = ['÷', 'X', '+', '-'];
+  let operator = ['÷', 'x', '+', '-'];
   let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-  if (buttonName === 'AC') {
-    total = null;
-    next = null;
-    operation = null;
-  }
 
   if (buttonName === '+/-') {
     if (!next) {
@@ -18,6 +12,12 @@ const calculate = (data, buttonName) => {
     } else {
       next *= -1;
     }
+  }
+
+  if (buttonName === 'AC') {
+    total = null;
+    next = null;
+    operation = null;
   }
 
   if (buttonName === '%') {
