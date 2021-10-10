@@ -19,14 +19,16 @@ const calculate = (data, buttonName) => {
       next *= -1;
     }
   }
+
+  if (buttonName === '%') {
+    if (next) {
+      next /= 100;
+    } else {
+      total /= 100;
+    }
+  }
   /*
- The pseudo-codes goes in here.
- 1. if the buttonName is AC, total = null, operation = null, next = null
- 2. if buttonName == "+/-"
- (a) if no next, total x -1, 
- (b) else next x -1
- 
- 3. If buttonName = %
+  3. If buttonName = %
 
  if next, next/=100, else total/=100
  
