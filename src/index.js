@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './component/styles/index.css';
 // eslint-disable-next-line
 import PropTypes from "prop-types";
 // eslint-disable-next-line

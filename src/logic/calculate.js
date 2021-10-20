@@ -9,19 +9,25 @@ const calculate = (data, buttonName) => {
     total = '';
     next = '';
     operation = '';
-  } else if (buttonName === '+/-') {
+  }
+
+  if (buttonName === '+/-') {
     if (!next) {
       total = (total *= -1).toString();
     } else {
       next = (next *= -1).toString();
     }
-  } else if (buttonName === '%') {
+  }
+
+  if (buttonName === '%') {
     if (next) {
       next = (next /= 100).toString();
     } else {
       total = (total /= 100).toString();
     }
-  } else if (buttonName === '.') {
+  }
+
+  if (buttonName === '.') {
     if (!total) {
       total += '0.';
     } else if (!next.includes(buttonName) && operation) {
@@ -31,7 +37,9 @@ const calculate = (data, buttonName) => {
     } else if (!next && operation) {
       next += '0.';
     }
-  } else if (operator.includes(buttonName)) {
+  }
+
+  if (operator.includes(buttonName)) {
     if (!total) {
       total = null;
     } else if (!next && total) {
@@ -39,7 +47,9 @@ const calculate = (data, buttonName) => {
     } else if (total && next && operation) {
       total = operate(total, next, operation);
     }
-  } else if (numbers.includes(buttonName)) {
+  }
+
+  if (numbers.includes(buttonName)) {
     if (!total) {
       total = buttonName;
     } else if (operation) {
@@ -47,7 +57,9 @@ const calculate = (data, buttonName) => {
     } else if (total && !operation) {
       total += buttonName;
     }
-  } else if (buttonName === '=') {
+  }
+
+  if (buttonName === '=') {
     if (total && next && operation) {
       total = operate(total, next, operation);
       next = '';
