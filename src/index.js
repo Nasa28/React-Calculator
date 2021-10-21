@@ -5,7 +5,7 @@ import './component/styles/index.css';
 import PropTypes from "prop-types";
 // eslint-disable-next-line
 import Big from "big.js";
-import App from './component/App';
+import App from './component/Pages/Calculator/App';
 
 ReactDOM.render(
   <React.StrictMode>
