@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import calculate from '../../../logic/calculate';
 import '../../styles/app.css';
+import NavBar from '../NavBar/NavBar';
 
 const App = () => {
   const [data, setData] = useState({
@@ -17,10 +19,15 @@ const App = () => {
   const currentResult = total || next;
   return (
     <>
-      <div className="app">
-        <Display result={currentResult} />
-        <ButtonPanel clickHandler={handleClick} />
-      </div>
+      <Router>
+        <NavBar />
+        <Switch>
+          <div className="app">
+            <Display result={currentResult} />
+            <ButtonPanel clickHandler={handleClick} />
+          </div>
+        </Switch>
+      </Router>
     </>
   );
 };
