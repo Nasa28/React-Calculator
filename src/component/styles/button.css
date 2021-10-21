@@ -1,7 +1,18 @@
 .button-color {
-  background-color:rgb(245,145,62);
+  background-color: rgb(245, 145, 62);
 }
 
 .btn-orange:hover {
   background-color: #e9e6e6;
+}
+
+button {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+body {
+  background-image: url('../../logic/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
