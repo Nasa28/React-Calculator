@@ -1,148 +1,115 @@
-import calculate from '../../logic/calculate';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
+import Calculator from '../Pages/Calculator/Calculator';
 
-it('Returns empty string if button is AC', () => {
-  const data = { total: '20', next: '5', operation: '' };
-  expect(calculate(data, 'AC')).toMatchObject({
-    total: '',
-    next: '',
-    operation: '',
-  });
-});
+describe('Calculator', () => {
+  test('Test the presence of button number 1', () => {
+    render(<Calculator />);
 
-describe('Test the +/- button', () => {
-  const data = { total: '20', next: '', operation: '' };
-  it('Returns negative value of  total', () => {
-    expect(calculate(data, '+/-')).toMatchObject({
-      total: '-20',
-    });
+    expect(screen.getByText('1')).toBeInTheDocument();
   });
 
-  it('Returns positive value of  total', () => {
-    const data = { total: '-20', next: '', operation: '' };
-    expect(calculate(data, '+/-')).toStrictEqual({
-      total: '20',
-      next: '',
-      operation: '',
-    });
+  test('Test the presence of button number 2', () => {
+    render(<Calculator />);
+
+    expect(screen.getByText('2')).toBeInTheDocument();
   });
 
-  it('Returns 0 if no total or next', () => {
-    const datas = { total: '', next: '', operation: '' };
-    expect(calculate(datas, '+/-')).toMatchObject({
-      total: '0',
-    });
-  });
-});
+  test('Test the presence of button number 3', () => {
+    render(<Calculator />);
 
-describe('Test Instance of result to be object', () => {
-  it('Comfirm that result is an object', () => {
-    const data = { total: '20', next: '5', operation: '' };
-    expect(calculate(data)).toBeInstanceOf(Object);
-  });
-});
-
-describe('Test % button', () => {
-  it('Returns the percentage of total', () => {
-    const data = { total: '20', next: '', operation: '' };
-    expect(calculate(data, '%')).toStrictEqual({
-      total: '0.2',
-      next: '',
-      operation: '',
-    });
-  });
-});
-
-describe('Tests the "." Button', () => {
-  const data = { total: '', next: '', operation: '' };
-  it('Returns 0. if no total', () => {
-    expect(calculate(data, '.')).toStrictEqual({
-      total: '0.',
-      next: '',
-      operation: '',
-    });
+    expect(screen.getByText('3')).toBeInTheDocument();
   });
 
-  it('Returns total to next + "." if next does not include "." ', () => {
-    const data = { total: '5', next: '', operation: '' };
-    expect(calculate(data, '.')).toStrictEqual({
-      total: '5.',
-      next: '',
-      operation: '',
-    });
+  test('Test the presence of button number 4', () => {
+    render(<Calculator />);
+
+    expect(screen.getByText('4')).toBeInTheDocument();
   });
 
-  it('Returns total + "." if total does not include "." ', () => {
-    const data = { total: '5', next: '', operation: '' };
-    expect(calculate(data, '.')).toStrictEqual({
-      total: '5.',
-      next: '',
-      operation: '',
-    });
+  test('Test the presence of button number 5', () => {
+    render(<Calculator />);
+
+    expect(screen.getByText('5')).toBeInTheDocument();
   });
 
+  test('Test the presence of button number 6', () => {
+    render(<Calculator />);
 
-  it('Returns null total not includes "." ', () => {
-    const data = { total: '5.', next: '.', operation: '' };
-    expect(calculate(data, '.')).toStrictEqual({
-      total: '5.',
-      next: '.',
-      operation: '',
-    });
-  });
-});
-
-describe("Test '='", () => {
-  const data = { total: '10', next: '15', operation: '+' };
-  it('Returns the result of the operation', () => {
-    expect(calculate(data, '=')).toEqual({
-      total: '25',
-      next: '',
-      operation: '',
-    });
-  });
-});
-
-describe('Test the operands', () => {
-  const data = { total: '10', next: '10', operation: '+' };
-  it('Returns the Result of addition operation', () => {
-    expect(calculate(data, '+')).toEqual({
-      total: '20',
-      next: '10',
-      operation: '+',
-    });
+    expect(screen.getByText('6')).toBeInTheDocument();
   });
 
-  it('Returns the Result of subtraction operation', () => {
-    const data = { total: '10', next: '10', operation: '-' };
-    expect(calculate(data, '-')).toEqual({
-      total: '0',
-      next: '10',
-      operation: '-',
-    });
+  test('Test the presence of button number 7', () => {
+    render(<Calculator />);
+
+    expect(screen.getByText('7')).toBeInTheDocument();
   });
 
-  it('Returns the Result of Multiplication operation', () => {
-    const data = { total: '10', next: '10', operation: 'x' };
-    expect(calculate(data, 'x')).toEqual({
-      total: '100',
-      next: '10',
-      operation: 'x',
-    });
+  test('Test the presence of button number 8', () => {
+    render(<Calculator />);
+
+    expect(screen.getByText('8')).toBeInTheDocument();
   });
 
-  it('Returns the Result of Division operation', () => {
-    const data = { total: '10', next: '10', operation: '÷' };
-    expect(calculate(data, '÷')).toEqual({
-      total: '1',
-      next: '10',
-      operation: '÷',
-    });
-  });
-});
+  test('Test the presence of button number 9', () => {
+    render(<Calculator />);
 
-describe('Test Number Buttons', () => {
-  const data = { total: '5', next: '', operation: '' };
-  it('Returns buttonName if no total', () => {
-    expect(data).not.toEqual({});
+    expect(screen.getByText('9')).toBeInTheDocument();
+  });
+
+  test('Test the presence of button number .', () => {
+    render(<Calculator />);
+
+    expect(screen.getByText('.')).toBeInTheDocument();
+  });
+
+  test('Test the presence of button number AC', () => {
+    render(<Calculator />);
+
+    expect(screen.getByText('AC')).toBeInTheDocument();
+  });
+
+  test('Test the presence of button number =', () => {
+    render(<Calculator />);
+
+    expect(screen.getByText('=')).toBeInTheDocument();
+  });
+
+  test('Test the presence of button number +/-', () => {
+    render(<Calculator />);
+
+    expect(screen.getByText('+/-')).toBeInTheDocument();
+  });
+
+  test('Test the presence of button number +', () => {
+    render(<Calculator />);
+
+    expect(screen.getByText('+')).toBeInTheDocument();
+  });
+
+  test('Test the presence of button number -', () => {
+    render(<Calculator />);
+
+    expect(screen.getByText('-')).toBeInTheDocument();
+  });
+
+  test('Test the presence of button number x', () => {
+    render(<Calculator />);
+
+    expect(screen.getByText('x')).toBeInTheDocument();
+  });
+
+  test('Test the presence of button number ÷', () => {
+    render(<Calculator />);
+
+    expect(screen.getByText('÷')).toBeInTheDocument();
+  });
+
+  test('Test the presence of button number %', () => {
+    render(<Calculator />);
+
+    expect(screen.getByText('%')).toBeInTheDocument();
   });
 });
