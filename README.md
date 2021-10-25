@@ -2,6 +2,9 @@
 
 > This is simple calculator built with react.
 
+![screenshot]('../../logic/readme.png)
+
+
 ## Built With
 
 - HTML
