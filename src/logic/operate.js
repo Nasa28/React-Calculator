@@ -12,7 +12,7 @@ const operate = (numberOne, numberTwo, operation) => {
   } else if (operation === 'x') {
     result = num1.times(num2);
   } else if (operation === '÷') {
-    result = num1.div(num1);
+    result = num1.div(num2);
   } else if (operation === '%') {
     result = num1.div(Big('100'));
   }

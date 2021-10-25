@@ -29,19 +29,19 @@ const calculate = (data, buttonName) => {
 
   if (buttonName === '.') {
     if (!total) {
-      total += '0.';
+      total = '0.';
     } else if (!next.includes(buttonName) && operation) {
       next += '.';
     } else if (!total.includes('.') && !operation) {
       total += '.';
     } else if (!next && operation) {
-      next += '0.';
+      total = '0.';
     }
   }
 
   if (operator.includes(buttonName)) {
     if (!total) {
-      total = null;
+      total = '';
     } else if (!next && total) {
       operation = buttonName;
     } else if (total && next && operation) {
@@ -66,7 +66,6 @@ const calculate = (data, buttonName) => {
       operation = '';
     }
   }
-  console.log(data);
   return { total, next, operation };
 };
 
