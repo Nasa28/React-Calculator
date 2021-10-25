@@ -14,10 +14,11 @@ const operate = (numberOne, numberTwo, operation) => {
   } else if (operation === '%') {
     result = num1.div(Big('100'));
   }
-  if (operation === '÷' && num2.valueOf() !== '0') {
-    result = num1.div(num2);
-  } else result = "Can't divide by zero";
-
+  if (operation === '÷') {
+    if (num2.valueOf() === '0') {
+      result = "Can't divide by zero";
+    } else result = num1.div(num2);
+  }
   return result.toString();
 };
 

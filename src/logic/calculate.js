@@ -40,9 +40,6 @@ const calculate = (data, buttonName) => {
   }
 
   if (operator.includes(buttonName)) {
-    if (buttonName === '÷' && next === '0') {
-      total = 'cannot divide by 0';
-    }
     if (!total) {
       total = '';
     } else if (!next && total) {

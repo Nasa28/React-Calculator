@@ -139,6 +139,15 @@ describe('Test the operands', () => {
   });
 });
 
+it('Returns an error if next is 0 during division operation', () => {
+  const data = { total: '10', next: '0', operation: '÷' };
+  expect(calculate(data, '÷')).toEqual({
+    total: "Can't divide by zero",
+    next: '0',
+    operation: '÷',
+  });
+});
+
 describe('Test Number Buttons', () => {
   const data = { total: '5', next: '', operation: '' };
   it('Returns buttonName if no total', () => {
