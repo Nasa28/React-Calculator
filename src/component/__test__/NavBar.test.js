@@ -5,14 +5,18 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from '../Pages/NavBar/NavBar';
 
 describe('App component', () => {
+  render(
+    <Router>
+      <Route>
+        <NavBar />
+      </Route>
+    </Router>
+  );
   it('Renders the NavBar', () => {
-    render(
-      <Router>
-        <Route>
-          <NavBar />
-        </Route>
-      </Router>,
-    );
     expect(screen.getByText('Home')).toBeInTheDocument();
+  });
+
+  it('Renders the only the NavBar links ', () => {
+    expect(screen.queryByText('About')).not.toBeInTheDocument();
   });
 });
