@@ -79,6 +79,16 @@ describe('Tests the "." Button', () => {
       operation: '',
     });
   });
+
+
+  it('Returns null total not includes "." ', () => {
+    const data = { total: '5.', next: '.', operation: '' };
+    expect(calculate(data, '.')).toStrictEqual({
+      total: '5.',
+      next: '.',
+      operation: '',
+    });
+  });
 });
 
 describe("Test '='", () => {
@@ -127,5 +137,12 @@ describe('Test the operands', () => {
       next: '10',
       operation: '÷',
     });
+  });
+});
+
+describe('Test Number Buttons', () => {
+  const data = { total: '5', next: '', operation: '' };
+  it('Returns buttonName if no total', () => {
+    expect(data).not.toEqual({});
   });
 });
