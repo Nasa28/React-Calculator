@@ -1,4 +1,4 @@
-# Math-magicians Inc  Calculator App
+# Math-magicians Inc Calculator App
 
 > This is simple calculator built with react.
 
@@ -35,11 +35,9 @@ on your terminal.
 - Open your prefered browser
 - Visit `http://localhost:3000/`
 
-
 ## Live version
 
 [Live Version](https://nasa-calculator.herokuapp.com/)
-
 
 ## Setup test environment, and running the test
 
@@ -67,7 +65,3 @@ Feel free to check the [issues page](https://github.com/Nasa28/React-Calculator/
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## 📝 License
-
-This project is [MIT](LICENSE) licensed.
