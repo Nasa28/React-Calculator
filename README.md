@@ -40,6 +40,12 @@ on your terminal.
 
 [Live Version](https://nasa-calculator.herokuapp.com/)
 
+
+## Setup test environment, and running the test
+
+- Run `npm install` to set up all dependencies
+- Run `npm test` to run the test
+
 ## Authors
 
 👨‍💻 **Kalu Chinasa Agu**
