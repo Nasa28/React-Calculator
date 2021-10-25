@@ -14,7 +14,7 @@ const Calculator = () => {
     setData(calculate(data, buttonName));
   };
   const { total, next } = data;
-  const currentResult = total || next;
+  const currentResult = next || total;
   return (
     <>
       <div className="main">

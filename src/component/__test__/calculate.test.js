@@ -1,11 +1,22 @@
 import calculate from '../../logic/calculate';
 
-it('Returns empty string if button is AC', () => {
+describe('Test The AC button', () => {
   const data = { total: '20', next: '5', operation: '' };
-  expect(calculate(data, 'AC')).toMatchObject({
-    total: '',
-    next: '',
-    operation: '',
+
+  it('Returns empty string if button is AC', () => {
+    expect(calculate(data, 'AC')).toStrictEqual({
+      total: '',
+      next: '',
+      operation: '',
+    });
+  });
+
+  it('Returns empty string if button is AC', () => {
+    expect(calculate(data, 'AC')).not.toMatchObject({
+      total: '20',
+      next: '5',
+      operation: '',
+    });
   });
 });
 
@@ -80,6 +91,15 @@ describe('Tests the "." Button', () => {
     });
   });
 
+  it('Does not Return total + "." if total does not include "." ', () => {
+    const data = { total: '5', next: '', operation: '' };
+    expect(calculate(data, '.')).not.toStrictEqual({
+      total: '5..',
+      next: '',
+      operation: '',
+    });
+  });
+
   it('Returns null total not includes "." ', () => {
     const data = { total: '5.', next: '.', operation: '' };
     expect(calculate(data, '.')).toStrictEqual({
@@ -93,7 +113,7 @@ describe('Tests the "." Button', () => {
 describe("Test '='", () => {
   const data = { total: '10', next: '15', operation: '+' };
   it('Returns the result of the operation', () => {
-    expect(calculate(data, '=')).toEqual({
+    expect(calculate(data, '=')).toStrictEqual({
       total: '25',
       next: '',
       operation: '',
@@ -104,7 +124,7 @@ describe("Test '='", () => {
 describe('Test the operands', () => {
   const data = { total: '10', next: '10', operation: '+' };
   it('Returns the Result of addition operation', () => {
-    expect(calculate(data, '+')).toEqual({
+    expect(calculate(data, '+')).toStrictEqual({
       total: '20',
       next: '10',
       operation: '+',
@@ -122,7 +142,7 @@ describe('Test the operands', () => {
 
   it('Returns the Result of Multiplication operation', () => {
     const data = { total: '10', next: '10', operation: 'x' };
-    expect(calculate(data, 'x')).toEqual({
+    expect(calculate(data, 'x')).toStrictEqual({
       total: '100',
       next: '10',
       operation: 'x',
@@ -131,8 +151,8 @@ describe('Test the operands', () => {
 
   it('Returns the Result of Division operation', () => {
     const data = { total: '10', next: '10', operation: '÷' };
-    expect(calculate(data, '÷')).toEqual({
-      total: '1',
+    expect(calculate(data, '÷')).toStrictEqual({
+      total: '1.0000',
       next: '10',
       operation: '÷',
     });
@@ -142,7 +162,7 @@ describe('Test the operands', () => {
 it('Returns an error if next is 0 during division operation', () => {
   const data = { total: '10', next: '0', operation: '÷' };
   expect(calculate(data, '÷')).toEqual({
-    total: "Can't divide by zero",
+    total: 'Invalid',
     next: '0',
     operation: '÷',
   });
@@ -150,7 +170,7 @@ it('Returns an error if next is 0 during division operation', () => {
 
 describe('Test Number Buttons', () => {
   const data = { total: '5', next: '', operation: '' };
-  it('Returns buttonName if no total', () => {
+  it('Returns Next or Button if no total', () => {
     expect(data).not.toEqual({});
   });
 });

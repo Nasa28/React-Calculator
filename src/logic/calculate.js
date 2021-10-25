@@ -41,21 +41,23 @@ const calculate = (data, buttonName) => {
 
   if (operator.includes(buttonName)) {
     if (!total) {
-      total = '';
+      total += next;
+      next = '';
+      operation = buttonName;
     } else if (!next && total) {
       operation = buttonName;
     } else if (total && next && operation) {
       total = operate(total, next, operation);
     }
   }
-
   if (numbers.includes(buttonName)) {
-    if (!total) {
-      total = buttonName;
-    } else if (operation) {
+    if (!total || total === 'Invalid') {
       next += buttonName;
-    } else if (total && !operation) {
-      total += buttonName;
+    } else if (total && operation) {
+      next += buttonName;
+    } else if (total && next === '' && operation === '') {
+      next = buttonName;
+      total = '';
     }
   }
 

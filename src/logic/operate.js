@@ -16,8 +16,8 @@ const operate = (numberOne, numberTwo, operation) => {
   }
   if (operation === '÷') {
     if (num2.valueOf() === '0') {
-      result = "Can't divide by zero";
-    } else result = num1.div(num2);
+      result = 'Invalid';
+    } else result = num1.div(num2).toFixed(4);
   }
   return result.toString();
 };

@@ -10,7 +10,7 @@ describe('App component', () => {
       <Route>
         <NavBar />
       </Route>
-    </Router>
+    </Router>,
   );
   it('Renders the NavBar', () => {
     expect(screen.getByText('Home')).toBeInTheDocument();
