@@ -1,0 +1,25 @@
+.main .app {
+  max-width: 700px;
+  margin-left: 40%;
+}
+
+h3 {
+  margin-left: 20%;
+}
+
+blockquote {
+  font-size: 30px;
+  margin: 100px 150px;
+  line-height: 1.2;
+  font-style: italic;
+}
+
+p,
+h2 {
+  margin: 30px 10px;
+  line-height: 2;
+}
+
+p {
+  font-size: 24px;
+}

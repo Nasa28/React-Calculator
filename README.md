@@ -2,6 +2,9 @@
 
 > This is simple calculator built with react.
 
+![screenshot](readme.png)
+
+
 ## Built With
 
 - HTML
@@ -40,6 +43,12 @@ on your terminal.
 
 [Live Version](https://nasa-calculator.herokuapp.com/)
 
+
+## Setup test environment, and running the test
+
+- Run `npm install` to set up all dependencies
+- Run `npm test` to run the test
+
 ## Authors
 
 👨‍💻 **Kalu Chinasa Agu**
@@ -64,4 +73,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](LICENSE) licensed.
+This project is [MIT](https://github.com/stevenvachon/broken-link-checker/blob/main/license) licensed.

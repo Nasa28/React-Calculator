@@ -7,21 +7,19 @@ const operate = (numberOne, numberTwo, operation) => {
 
   if (operation === '+') {
     result = num1.plus(num2);
-  }
-  if (operation === '-') {
+  } else if (operation === '-') {
     result = num1.minus(num2);
-
-    if (operation === 'x') {
-      result = num1.times(num2);
-    }
-    if (operation === '÷') {
-      result = num1.div(num1);
-    }
-    if (operation === '%') {
-      result = num1.div(Big('100'));
-    }
+  } else if (operation === 'x') {
+    result = num1.times(num2);
+  } else if (operation === '%') {
+    result = num1.div(Big('100'));
   }
-  return result.toPrecision();
+  if (operation === '÷') {
+    if (num2.valueOf() === '0') {
+      result = 'Invalid';
+    } else result = num1.div(num2).toFixed(4);
+  }
+  return result.toString();
 };
 
 export default operate;

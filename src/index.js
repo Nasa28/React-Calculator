@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './component/styles/index.css';
 // eslint-disable-next-line
 import PropTypes from "prop-types";
 // eslint-disable-next-line
 import Big from "big.js";
-import App from './component/App';
+import App from './component/Pages/Calculator/App';
 
 ReactDOM.render(
   <React.StrictMode>
