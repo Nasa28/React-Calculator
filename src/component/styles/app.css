@@ -1,4 +1,4 @@
-.app {
+.main .app {
   max-width: 700px;
   margin-left: 40%;
 }
@@ -14,8 +14,8 @@ blockquote {
   font-style: italic;
 }
 
-
-p , h2{
+p,
+h2 {
   margin: 30px 10px;
   line-height: 2;
 }

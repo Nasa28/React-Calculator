@@ -8,8 +8,8 @@ describe('Quotes component', () => {
     render(<Quotes />);
     expect(
       screen.getByText(
-        'Mathematics is not about numbers, equations, computations, or algorithms: it is about understanding. –William Paul Thurston'
-      )
+        'Mathematics is not about numbers, equations, computations, or algorithms: it is about understanding. –William Paul Thurston',
+      ),
     ).toBeInTheDocument();
   });
 });

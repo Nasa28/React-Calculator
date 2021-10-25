@@ -80,7 +80,6 @@ describe('Tests the "." Button', () => {
     });
   });
 
-
   it('Returns null total not includes "." ', () => {
     const data = { total: '5.', next: '.', operation: '' };
     expect(calculate(data, '.')).toStrictEqual({

@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Home from '../Pages/Home/Home';
 
-describe('App component', () => {
+describe('Home component', () => {
   it('Renders the Home page', () => {
     render(<Home />);
     expect(screen.getByText('Welcome to our page!')).toBeInTheDocument();
